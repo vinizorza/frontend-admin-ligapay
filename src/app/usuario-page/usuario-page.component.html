@@ -1,0 +1,45 @@
+<lpa-menu></lpa-menu>
+
+<div class="content">
+
+  <div class="titulo">
+    <h1>Detalhes Usuário</h1>
+  </div>
+
+  <div class="mat-elevation-z8" >
+    <form style="text-align: center;">
+      <mat-form-field>
+        <input matInput placeholder="Nome" [(ngModel)]="usuario.time.nome" [ngModelOptions]="{standalone: true}" disabled>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Email" [(ngModel)]="usuario.email" [ngModelOptions]="{standalone: true}" disabled>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Time" [(ngModel)]="usuario.time.nomeTime" [ngModelOptions]="{standalone: true}" disabled>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Pontuação"  [(ngModel)]="usuario.time.somaScores" [ngModelOptions]="{standalone: true}" disabled>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Montante Carteira" [(ngModel)]="usuario.carteira.montanteCarteira" [ngModelOptions]="{standalone: true}" disabled>
+      </mat-form-field>
+
+      <mat-form-field class="montante">
+        <mat-label>Montante Recebido</mat-label>
+        <select matNativeControl multiple disabled>
+          <option *ngFor="let transacao of transacoesDestino" [value]="transacao.id">R${{transacao.amount/100}} - {{transacao.origin.user.team.cartolaName}}</option>
+        </select>
+      </mat-form-field>
+
+      <mat-form-field class="montante">
+        <mat-label>Montante Enviado</mat-label>
+        <select matNativeControl multiple disabled>
+          <option *ngFor="let transacao of transacoesOrigem" [value]="transacao.id">R${{transacao.amount/100}} - {{transacao.destination.user.team.cartolaName}}</option>
+        </select>
+      </mat-form-field>
+    </form>
+  </div>
+</div>

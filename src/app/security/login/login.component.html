@@ -1,0 +1,27 @@
+<mat-card>
+
+  <mat-card-title>LigaPay Admin</mat-card-title>
+
+  <mat-card-content>
+    <form class="tp-form" [formGroup]="formdata" (ngSubmit) = "login(formdata.value)">
+      <mat-form-field class = "tp-full-width">
+        <input type="email" matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf = "formdata.controls['email'].errors?.email && !formdata.controls['email'].errors?.required">
+            Informe um email válido
+        </mat-error>
+        <mat-error *ngIf = "formdata.controls['email'].errors?.required">
+            Email é <strong>necessário</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class = "tp-full-width">
+        <input type="password" matInput placeholder="Senha" formControlName="senha">
+        <mat-error *ngIf = "formdata.controls['senha'].errors?.required">
+          Senha é <strong>necessária</strong>
+        </mat-error>
+      </mat-form-field>
+      <div class="button">
+        <button type="submit" mat-button [disabled]="formdata.invalid">Login</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

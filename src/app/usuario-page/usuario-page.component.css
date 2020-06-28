@@ -1,0 +1,27 @@
+table {
+  width: 100%;
+}
+
+.content {
+  padding: 30px;
+}
+
+.titulo {
+  text-align: center;
+}
+
+.filtros {
+  padding: 30px;
+}
+
+mat-form-field {
+  margin: 20px;
+}
+
+#submitButton {
+  margin: 20px;
+}
+
+.montante {
+  width: 25%;
+}
